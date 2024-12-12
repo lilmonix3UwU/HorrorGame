@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class AnomalyController : MonoBehaviour
 {
-    GameObject[] anomalier = {GameObject.,    };
-    
-    
+    GameObject Cylinder;
+    GameObject[] anomalier = {  };
     
     // Start is called before the first frame update
     void Start()
