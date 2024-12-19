@@ -6,8 +6,10 @@ using UnityEngine;
 public class AnomalyController : MonoBehaviour
 {
     [SerializeField] private GameObject[] anomalier;
+    [SerializeField] private GameObject[] flyvendeAnomalier;
     GameObject anomalySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
     [SerializeField] private GameObject[] gutObjects;
+    [SerializeField] private GameObject[] anomaliArrays;
     public float timer, interval = 2f;
     
 
@@ -27,6 +29,7 @@ public class AnomalyController : MonoBehaviour
             bool activateObejct = Random.Range(0, 2) == 1;
             if (activateObejct)
             {
+
                 int randomIndex = Random.Range(0, anomalier.Length);
             
                 for (int i = 0; i < anomalier.Length; i++)
@@ -44,17 +47,6 @@ public class AnomalyController : MonoBehaviour
                 Debug.Log("Ingen anomalier");
             }
             timer = 0;
-        }
-       
-        
-        
-            /*for (int i = 0; i < anomalier.Length; i++)
-            {
-                int randomValue = Random.Range(0, 2);
-                anomalier[i].SetActive(i == randomIndex);
-            } */
-            
-        
-                
+        }       
     }
 }
