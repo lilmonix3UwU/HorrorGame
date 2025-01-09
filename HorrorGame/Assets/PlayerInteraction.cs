@@ -21,7 +21,13 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("DoorEnter"))
             {
-                Debug.Log("pp");
+                Debug.Log("Hitting door");
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("EEE!!!!");
+                    StartCoroutine(hit.collider.gameObject.GetComponent<RoomTransition>().EnterDoor()); 
+                }
+                
             }
         }
 

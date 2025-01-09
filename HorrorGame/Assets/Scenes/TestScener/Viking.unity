@@ -551,13 +551,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210759474}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9914446, z: -0, w: 0.13052888}
-  m_LocalPosition: {x: 1.75, y: 0, z: -1.6}
+  m_LocalRotation: {x: -0, y: -0.7071058, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: 2, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 678911979}
-  m_LocalEulerAnglesHint: {x: 0, y: -165, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &233343039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678911979}
   m_Layer: 0
-  m_Name: Door1
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1609,6 +1609,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e14a2e8ce970341a08c42498cec25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doorHinge: {fileID: 1448060995}
+  _door: {fileID: 678911978}
+  _startPoint: {fileID: 2028291844}
+  _endPoint: {fileID: 210759474}
 --- !u!65 &883121245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1837,6 +1841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e14a2e8ce970341a08c42498cec25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doorHinge: {fileID: 1448060995}
+  _door: {fileID: 678911978}
+  _startPoint: {fileID: 210759474}
+  _endPoint: {fileID: 2028291844}
 --- !u!65 &1023047493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1871,7 +1879,7 @@ GameObject:
   - component: {fileID: 1128060023}
   - component: {fileID: 1128060022}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: DoorHandle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2408,7 +2416,7 @@ Animator:
   m_GameObject: {fileID: 1448060994}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b1e4fd2b9569da499bd61975158402b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0c8cd7e5b5312d544852eba8c7d6b4af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2428,7 +2436,7 @@ Transform:
   m_GameObject: {fileID: 1448060994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3019,7 +3027,7 @@ Transform:
   m_GameObject: {fileID: 2028291844}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0000002, y: 0, z: -1}
+  m_LocalPosition: {x: -1, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3143,7 +3151,7 @@ GameObject:
   - component: {fileID: 2082912789}
   - component: {fileID: 2082912788}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: DoorHandle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3787,6 +3795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86774a13b1ca6f449e01d80ffa4ca11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionRange: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

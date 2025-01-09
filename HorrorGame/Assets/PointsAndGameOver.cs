@@ -9,7 +9,7 @@ public class PointsAndGameOver : MonoBehaviour
 {
     private float secondsLeft;
     public int minutesLeft;
-    private bool doorSpamPreventioin = true;
+    private bool doorSpamPrevention = true;
     [SerializeField] private TMP_Text _text;
     [SerializeField] private GameObject _door;
     private void Update()
@@ -24,10 +24,10 @@ public class PointsAndGameOver : MonoBehaviour
         { 
             secondsLeft -= Time.deltaTime; 
         }
-        else if (doorSpamPreventioin)
+        else if (doorSpamPrevention)
         {
             
-            doorSpamPreventioin = false;
+            doorSpamPrevention = false;
         }
 
 
