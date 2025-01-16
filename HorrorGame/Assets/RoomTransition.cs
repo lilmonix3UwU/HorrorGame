@@ -11,46 +11,60 @@ public class RoomTransition : MonoBehaviour
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject _startPoint;
     [SerializeField] private GameObject _endPoint;
-    private bool moveToStartPoint;
-    private bool moveToEndPoint;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        moveToStartPoint = false;
-        moveToEndPoint = false;
     }
     private void Update()
-    {
-        if (moveToStartPoint)
-        {
-            //player.transform.rotation = Quaternion.Lerp(player.transform.rotation, _startPoint.transform.rotation, 2);
-            player.transform.position = Vector3.Lerp(player.transform.position, _startPoint.transform.position, 2);
-        }
-        if (moveToEndPoint)
-        {
-            player.transform.position = Vector3.Lerp(_startPoint.transform.position, _endPoint.transform.position, 4);
-        }
+    { 
+        
     }
+
+
+
+
 
     public IEnumerator EnterDoor()
     {
+        player.GetComponent<PlayerInteraction>().InteractionEnabled = false;
         Debug.Log("the thing did a done");
         player.GetComponent<PlayerInput>().enabled = false;
-        moveToStartPoint = true;
         _doorHinge.SetTrigger("OpenDoor");
+        StartCoroutine(MovePlayer(player, _startPoint, 0.6f, true));
+        
 
-        yield return new WaitForSeconds(2);
-        moveToStartPoint = false;
-        moveToEndPoint = true;
+        yield return new WaitForSeconds(0.6f);
+        StartCoroutine(MovePlayer(_startPoint, _endPoint, 1, false));
 
 
-        yield return new WaitForSeconds(4);
-        moveToEndPoint = false;
+        yield return new WaitForSeconds(0.2f);
         _doorHinge.SetTrigger("CloseDoor");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.2f);
         _doorHinge.SetTrigger("Done");
+        yield return new WaitForSeconds(0.4f);
         player.GetComponent<PlayerInput>().enabled = true;
+        player.GetComponent<PlayerInteraction>().InteractionEnabled = true;
 
+    }
+
+
+
+    private IEnumerator MovePlayer(GameObject startPos, GameObject endPos, float moveTime, bool rotate)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < moveTime)
+        {
+            
+            if (rotate)
+            {
+                player.transform.rotation = Quaternion.Lerp(startPos.transform.rotation, endPos.transform.rotation, elapsedTime / moveTime);
+            }
+            
+            player.transform.position = Vector3.Lerp(startPos.transform.position, endPos.transform.position, elapsedTime / moveTime);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }

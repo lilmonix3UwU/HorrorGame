@@ -7,7 +7,6 @@ TagManager:
   - CinemachineTarget
   - Anomaly
   - DoorEnter
-  - DoorExit
   layers:
   - Default
   - TransparentFX

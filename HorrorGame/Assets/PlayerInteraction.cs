@@ -7,9 +7,11 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject PlayerCameraRoot;
     private RaycastHit hit;
     [SerializeField] private float InteractionRange;
+    public bool InteractionEnabled;
     void Start()
     {
         PlayerCameraRoot = GameObject.FindWithTag("CinemachineTarget"); 
+        InteractionEnabled = true;
     }
 
 
@@ -21,10 +23,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("DoorEnter"))
             {
-                Debug.Log("Hitting door");
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && InteractionEnabled)
                 {
-                    Debug.Log("EEE!!!!");
                     StartCoroutine(hit.collider.gameObject.GetComponent<RoomTransition>().EnterDoor()); 
                 }
                 
