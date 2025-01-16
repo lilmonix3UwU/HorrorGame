@@ -42,7 +42,6 @@ public class RoomTransition : MonoBehaviour
         _doorHinge.SetTrigger("CloseDoor");
         yield return new WaitForSeconds(1.2f);
         _doorHinge.SetTrigger("Done");
-        yield return new WaitForSeconds(0.4f);
         player.GetComponent<PlayerInput>().enabled = true;
         player.GetComponent<PlayerInteraction>().InteractionEnabled = true;
 
