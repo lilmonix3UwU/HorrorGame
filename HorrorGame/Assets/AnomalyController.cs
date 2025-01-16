@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
 
 
 public class AnomalyController : MonoBehaviour
@@ -9,7 +10,13 @@ public class AnomalyController : MonoBehaviour
     [SerializeField] private GameObject[] flyvendeAnomalier;
     GameObject anomalySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
     [SerializeField] private GameObject[] gutObjects;
-    [SerializeField] private GameObject[] anomaliArrays;
+    GameObject[][] storArray;
+    //anomaliArrays = new GameObject[2][];
+   /* [SerializeField] private GameObject[][] anomaliArrays = new GameObject [2][];
+    anomaliArrays = new GameObject[3]; */
+    
+   
+
     public float timer, interval = 2f;
     
 
