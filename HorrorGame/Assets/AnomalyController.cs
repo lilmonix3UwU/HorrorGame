@@ -33,7 +33,7 @@ public class AnomalyController : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= interval)
         {
-            int activateObjectA = Random.Range(0, 100);
+            int activateObjectA = Random.Range(0, 100); // DET HER VIRKER IKKE!!!
             //bool activateObjectF = Random.Range(0, 100) == activateObjectF <50);
             if (activateObjectA >= 25 && activateObjectA < 50)
             {
