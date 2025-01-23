@@ -33,8 +33,9 @@ public class AnomalyController : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= interval)
         {
-            int activateObejct = Random.Range(0, 2);
-            if (activateObejct == 1)
+            int activateObjectA = Random.Range(0, 100);
+            //bool activateObjectF = Random.Range(0, 100) == activateObjectF <50);
+            if (activateObjectA >= 25 && activateObjectA < 50)
             {
 
                 int randomIndex = Random.Range(0, anomalier.Length);
@@ -45,7 +46,7 @@ public class AnomalyController : MonoBehaviour
                 }
                 Debug.Log("Anomali Aktiv");
             }
-            if (activateObejct == 2)
+            if (activateObjectA >= 0 && activateObjectA < 25)
             {
                 int randomIndex = Random.Range(0, flyvendeAnomalier.Length);
                 for (int i = 0; i < flyvendeAnomalier.Length; i++)
@@ -55,11 +56,16 @@ public class AnomalyController : MonoBehaviour
                 Debug.Log("Flyvende anomali Aktiv");
 
             }
+            if (activateObjectA > 50 && activateObjectA < 75)
+            {
+                Debug.Log("Sejhed");
+            }
             else
             {
                 for (int i = 0; i < anomalier.Length; i++)
                 {
-                anomalier[i].SetActive(false);
+                 anomalier[i].SetActive(false);
+                 flyvendeAnomalier[i].SetActive(false);
                 }
                 Debug.Log("Ingen anomalier");
             }
