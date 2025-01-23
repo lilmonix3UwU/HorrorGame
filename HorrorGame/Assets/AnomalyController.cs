@@ -9,7 +9,7 @@ public class AnomalyController : MonoBehaviour
     [SerializeField] private GameObject[] anomalier;
     [SerializeField] private GameObject[] flyvendeAnomalier;
     GameObject anomalySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-    [SerializeField] private GameObject[] gutObjects;
+    [SerializeField] private GameObject[] regObjects;
     GameObject[][] storArray;
     //anomaliArrays = new GameObject[2][];
    /* [SerializeField] private GameObject[][] anomaliArrays = new GameObject [2][];
@@ -33,8 +33,8 @@ public class AnomalyController : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= interval)
         {
-            bool activateObejct = Random.Range(0, 2) == 1;
-            if (activateObejct)
+            int activateObejct = Random.Range(0, 2);
+            if (activateObejct == 1)
             {
 
                 int randomIndex = Random.Range(0, anomalier.Length);
@@ -44,6 +44,16 @@ public class AnomalyController : MonoBehaviour
                     anomalier[i].SetActive(i == randomIndex); 
                 }
                 Debug.Log("Anomali Aktiv");
+            }
+            if (activateObejct == 2)
+            {
+                int randomIndex = Random.Range(0, flyvendeAnomalier.Length);
+                for (int i = 0; i < flyvendeAnomalier.Length; i++)
+                {
+                    flyvendeAnomalier[i].SetActive(i == randomIndex);
+                }
+                Debug.Log("Flyvende anomali Aktiv");
+
             }
             else
             {

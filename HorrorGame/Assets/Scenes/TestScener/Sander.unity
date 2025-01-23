@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 29205553}
   - component: {fileID: 29205552}
   m_Layer: 0
-  m_Name: anomalySphere (1)
+  m_Name: anomalySphereF
   m_TagString: Anomaly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 347146020}
   - component: {fileID: 347146019}
   m_Layer: 0
-  m_Name: anomalyCylinder (1)
+  m_Name: anomalyCylinderF
   m_TagString: Anomaly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 489072548}
   - component: {fileID: 489072547}
   m_Layer: 0
-  m_Name: anomalySphere
+  m_Name: anomalySphereA
   m_TagString: Anomaly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 807788590}
   - component: {fileID: 807788589}
   m_Layer: 0
-  m_Name: anomalySphereEmpty
+  m_Name: anomalyController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
   - {fileID: 347146017}
   - {fileID: 1376462054}
   - {fileID: 29205550}
-  gutObjects:
+  regObjects:
   - {fileID: 1015239131}
   - {fileID: 1266670208}
   - {fileID: 830145659}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 830145662}
   - component: {fileID: 830145661}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: regSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 1015239134}
   - component: {fileID: 1015239133}
   m_Layer: 0
-  m_Name: Cylinder1
+  m_Name: regCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 1266670211}
   - component: {fileID: 1266670210}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: regCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 1376462057}
   - component: {fileID: 1376462056}
   m_Layer: 0
-  m_Name: anomlayCube (1)
+  m_Name: anomalyCubeF
   m_TagString: Anomaly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 1413772455}
   - component: {fileID: 1413772454}
   m_Layer: 0
-  m_Name: anomlayCube
+  m_Name: anomlayCubeA
   m_TagString: Anomaly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 1674340324}
   - component: {fileID: 1674340323}
   m_Layer: 0
-  m_Name: anomalyCylinder
+  m_Name: anomalyCylinderA
   m_TagString: Anomaly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
