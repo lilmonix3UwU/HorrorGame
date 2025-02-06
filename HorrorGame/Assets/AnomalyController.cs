@@ -12,6 +12,7 @@ public class AnomalyController : MonoBehaviour
     [SerializeField] private GameObject[] regObjects;
     GameObject temp;
     bool anomaliCheck;
+    bool startTimer;
     //anomaliArrays = new GameObject[2][];
     /* [SerializeField] private GameObject[][] anomaliArrays = new GameObject [2][];
      anomaliArrays = new GameObject[3]; */
@@ -32,10 +33,13 @@ public class AnomalyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > interval)
+        if (startTimer)
         {
-              
+            timer += Time.deltaTime;
+        }
+        if (timer >= interval)
+        {
+            startTimer = false;
             int activateObjectA = Random.Range(1, 4); // DET HER VIRKER IKKE!!!
             //bool activateObjectF = Random.Range(0, 100) == activateObjectF <50);
             if (activateObjectA == 1) // && activateObjectA < 50)
@@ -97,10 +101,10 @@ public class AnomalyController : MonoBehaviour
     }
     public void AnomaliCheck(bool anomali)
     {
-
+        startTimer = true;
         if (anomali == anomaliCheck)
         {
-            //kalder funktion
+            GameObject.Find("Controllers").GetComponent<PointsAndGameOver>().points++;
         }
 
 
