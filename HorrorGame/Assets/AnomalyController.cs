@@ -8,14 +8,15 @@ public class AnomalyController : MonoBehaviour
 {
     [SerializeField] private GameObject[] anomalier;
     [SerializeField] private GameObject[] flyvendeAnomalier;
-    GameObject anomalySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-    [SerializeField] private GameObject[] regObjects;
-    GameObject[][] storArray;
-    //anomaliArrays = new GameObject[2][];
-   /* [SerializeField] private GameObject[][] anomaliArrays = new GameObject [2][];
-    anomaliArrays = new GameObject[3]; */
     
-   
+    [SerializeField] private GameObject[] regObjects;
+    GameObject temp;
+    bool anomaliCheck;
+    //anomaliArrays = new GameObject[2][];
+    /* [SerializeField] private GameObject[][] anomaliArrays = new GameObject [2][];
+     anomaliArrays = new GameObject[3]; */
+
+
 
     public float timer, interval = 2f;
     
@@ -23,7 +24,8 @@ public class AnomalyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      //GameObject yeet = anomalier[Random.Range(0, anomalier.Length)];
+        //GameObject anomalySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //GameObject yeet = anomalier[Random.Range(0, anomalier.Length)];
 
     }
 
@@ -31,45 +33,87 @@ public class AnomalyController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= interval)
+        if (timer > interval)
         {
-            int activateObjectA = Random.Range(0, 100); // DET HER VIRKER IKKE!!!
+              
+            int activateObjectA = Random.Range(1, 4); // DET HER VIRKER IKKE!!!
             //bool activateObjectF = Random.Range(0, 100) == activateObjectF <50);
-            if (activateObjectA >= 25 && activateObjectA < 50)
+            if (activateObjectA == 1) // && activateObjectA < 50)
             {
 
-                int randomIndex = Random.Range(0, anomalier.Length);
+                
+                temp = anomalier[Random.Range(0, anomalier.Length)];
             
                 for (int i = 0; i < anomalier.Length; i++)
                 {
-                    anomalier[i].SetActive(i == randomIndex); 
+                    temp.SetActive(true);
+                    anomaliCheck = true;
                 }
                 Debug.Log("Anomali Aktiv");
+
+                
             }
-            if (activateObjectA >= 0 && activateObjectA < 25)
+
+            if (activateObjectA == 2)// && activateObjectA < 25)
             {
-                int randomIndex = Random.Range(0, flyvendeAnomalier.Length);
+                temp = anomalier[Random.Range(0, flyvendeAnomalier.Length)];
                 for (int i = 0; i < flyvendeAnomalier.Length; i++)
                 {
-                    flyvendeAnomalier[i].SetActive(i == randomIndex);
+                    temp.SetActive(true);
+                    anomaliCheck = true;
                 }
                 Debug.Log("Flyvende anomali Aktiv");
+                
 
             }
-            if (activateObjectA > 50 && activateObjectA < 75)
+
+            if (activateObjectA == 3)// && activateObjectA < 75)
             {
                 Debug.Log("Sejhed");
+                anomaliCheck = true;
             }
-            else
+
+            if (activateObjectA == 4)
             {
                 for (int i = 0; i < anomalier.Length; i++)
                 {
                  anomalier[i].SetActive(false);
                  flyvendeAnomalier[i].SetActive(false);
+                    
+                
                 }
                 Debug.Log("Ingen anomalier");
             }
+            if (activateObjectA == 0) 
+            { 
+                Debug.Log("Du har lavet en fejl dumbass");
+                anomaliCheck = false;
+            }
+
+            
+
             timer = 0;
         }       
+    }
+    public void AnomaliCheck(bool anomali)
+    {
+
+        if (anomali == anomaliCheck)
+        {
+            //kalder funktion
+        }
+
+
+        if (anomali)
+        {
+            if (temp.CompareTag("ChangedObject"))
+            {
+                temp.GetComponent<ChangedObject>().ResetObject();
+            }
+            else if (temp != null)
+            {
+                temp.SetActive(!temp.activeSelf);
+            }
+        }
     }
 }
