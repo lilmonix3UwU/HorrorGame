@@ -7,11 +7,19 @@ using UnityEngine.UI;
 
 public class PointsAndGameOver : MonoBehaviour
 {
+    public int points;
+
     private float secondsLeft;
     public int minutesLeft;
     private bool doorSpamPrevention = true;
     [SerializeField] private TMP_Text _text;
     [SerializeField] private GameObject _door;
+
+    private void Start()
+    {
+        points = 0;
+    }
+
     private void Update()
     {
         if (secondsLeft <= 0 && minutesLeft > 0)
