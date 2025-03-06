@@ -8,31 +8,24 @@ public class AnomalyController : MonoBehaviour
 {
     [SerializeField] private GameObject[] anomalier;
     [SerializeField] private GameObject[] flyvendeAnomalier;
-    
+    [SerializeField] private GameObject[] shapeshiftAnomalier;
     [SerializeField] private GameObject[] regObjects;
     GameObject temp;
     bool anomaliCheck;
     bool startTimer;
-    //anomaliArrays = new GameObject[2][];
-    /* [SerializeField] private GameObject[][] anomaliArrays = new GameObject [2][];
-     anomaliArrays = new GameObject[3]; */
-
-
-
     public float timer, interval = 2f;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject anomalySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        //GameObject yeet = anomalier[Random.Range(0, anomalier.Length)];
-
+        startTimer = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (startTimer)
         {
             timer += Time.deltaTime;
@@ -40,65 +33,76 @@ public class AnomalyController : MonoBehaviour
         if (timer >= interval)
         {
             startTimer = false;
-            int activateObjectA = Random.Range(1, 4); // DET HER VIRKER IKKE!!!
-            //bool activateObjectF = Random.Range(0, 100) == activateObjectF <50);
-            if (activateObjectA == 1) // && activateObjectA < 50)
+            int rando = Random.Range(0, 3);
+
+            switch (rando)
             {
+                case 0: RegAnomalier(); break;
 
-                
-                temp = anomalier[Random.Range(0, anomalier.Length)];
-            
-                for (int i = 0; i < anomalier.Length; i++)
-                {
-                    temp.SetActive(true);
-                    anomaliCheck = true;
-                }
-                Debug.Log("Anomali Aktiv");
+                case 1:FlyvAnomalier(); break;
 
-                
+                case 2: ShapeshiftAnomalier() ; break;
+
+                case 3: IngenAnomalier(); ; break;
             }
-
-            if (activateObjectA == 2)// && activateObjectA < 25)
-            {
-                temp = anomalier[Random.Range(0, flyvendeAnomalier.Length)];
-                for (int i = 0; i < flyvendeAnomalier.Length; i++)
-                {
-                    temp.SetActive(true);
-                    anomaliCheck = true;
-                }
-                Debug.Log("Flyvende anomali Aktiv");
-                
-
-            }
-
-            if (activateObjectA == 3)// && activateObjectA < 75)
-            {
-                Debug.Log("Sejhed");
-                anomaliCheck = true;
-            }
-
-            if (activateObjectA == 4)
-            {
-                for (int i = 0; i < anomalier.Length; i++)
-                {
-                 anomalier[i].SetActive(false);
-                 flyvendeAnomalier[i].SetActive(false);
-                    
-                
-                }
-                Debug.Log("Ingen anomalier");
-            }
-            if (activateObjectA == 0) 
-            { 
-                Debug.Log("Du har lavet en fejl dumbass");
-                anomaliCheck = false;
-            }
-
-            
 
             timer = 0;
+            startTimer = true;
         }       
     }
+
+    void RegAnomalier()
+    {
+        temp = anomalier[Random.Range(0, anomalier.Length)];
+
+        for (int i = 0; i < anomalier.Length; i++)
+        {
+            temp.SetActive(true);
+            anomaliCheck = true;
+        }
+        Debug.Log("Anomali Aktiv");
+    }
+
+    void FlyvAnomalier()
+    {
+        temp = flyvendeAnomalier[Random.Range(0, flyvendeAnomalier.Length)];
+        for (int i = 0; i < flyvendeAnomalier.Length; i++)
+        {
+            temp.SetActive(true);
+            anomaliCheck = true;
+        }
+        Debug.Log("Flyvende anomali Aktiv");
+
+    }
+
+    void ShapeshiftAnomalier()
+    {
+        temp = shapeshiftAnomalier[Random.Range(0, shapeshiftAnomalier.Length)];
+        for (int i = 0; i < shapeshiftAnomalier.Length; i++)
+        {
+            temp.SetActive(true);
+            anomaliCheck = true;
+        }
+
+        Debug.Log("ShapeShifter");
+    }
+
+    void IngenAnomalier()
+    {
+        for (int i = 0; i < anomalier.Length; i++)
+        {
+            anomalier[i].SetActive(false);
+            flyvendeAnomalier[i].SetActive(false);
+
+        }
+        for (int i = 0;i < flyvendeAnomalier.Length; i++)
+        {
+            flyvendeAnomalier[i].SetActive(false);
+        }
+        Debug.Log("Ingen anomalier");
+    }
+        
+
     public void AnomaliCheck(bool anomali)
     {
         startTimer = true;
@@ -120,4 +124,4 @@ public class AnomalyController : MonoBehaviour
             }
         }
     }
-}
+} 
