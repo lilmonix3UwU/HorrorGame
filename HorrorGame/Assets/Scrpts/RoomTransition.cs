@@ -11,14 +11,12 @@ public class RoomTransition : MonoBehaviour
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject _startPoint;
     [SerializeField] private GameObject _endPoint;
+    [SerializeField] private GameObject _anomilyController;
+    [SerializeField] private bool anomilyGuess;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-    }
-    private void Update()
-    { 
-        
     }
 
 
@@ -40,6 +38,8 @@ public class RoomTransition : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
         _doorHinge.SetTrigger("CloseDoor");
+        _anomilyController.GetComponent<AnomalyController>().AnomaliCheck(anomilyGuess);
+
         yield return new WaitForSeconds(1.2f);
         _doorHinge.SetTrigger("Done");
         player.GetComponent<PlayerInput>().enabled = true;
