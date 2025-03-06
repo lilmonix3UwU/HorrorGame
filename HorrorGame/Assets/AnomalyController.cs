@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 [System.Serializable]
 
@@ -25,15 +26,23 @@ public class AnomalyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            AnomaliCheck(true);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            AnomaliCheck(false);
+        }
+
         if (startTimer)
         {
             timer += Time.deltaTime;
         }
-        if (timer >= interval)
+        /*if (timer >= interval)
         {
             startTimer = false;
-            int rando = Random.Range(0, 3);
+            int rando = Random.Range(0, 4);
 
             switch (rando)
             {
@@ -41,14 +50,32 @@ public class AnomalyController : MonoBehaviour
 
                 case 1:FlyvAnomalier(); break;
 
-                case 2: ShapeshiftAnomalier() ; break;
+                case 2: ShapeshiftAnomalier(); break;
 
-                case 3: IngenAnomalier(); ; break;
+                case 3: IngenAnomalier(); break;
             }
 
             timer = 0;
-            startTimer = true;
-        }       
+            
+        } */
+        
+    }
+
+    void AnomaliSelect()
+    {
+        int rando = Random.Range(0, 4);
+
+        switch (rando)
+        {
+            case 0: RegAnomalier(); break;
+
+            case 1: FlyvAnomalier(); break;
+
+            case 2: ShapeshiftAnomalier(); break;
+
+            case 3: IngenAnomalier(); break;
+        }
+
     }
 
     void RegAnomalier()
@@ -89,16 +116,7 @@ public class AnomalyController : MonoBehaviour
 
     void IngenAnomalier()
     {
-        for (int i = 0; i < anomalier.Length; i++)
-        {
-            anomalier[i].SetActive(false);
-            flyvendeAnomalier[i].SetActive(false);
-
-        }
-        for (int i = 0;i < flyvendeAnomalier.Length; i++)
-        {
-            flyvendeAnomalier[i].SetActive(false);
-        }
+        anomaliCheck = false;
         Debug.Log("Ingen anomalier");
     }
         
@@ -108,12 +126,15 @@ public class AnomalyController : MonoBehaviour
         startTimer = true;
         if (anomali == anomaliCheck)
         {
-            GameObject.Find("Controllers").GetComponent<PointsAndGameOver>().points++;
+            //GameObject.Find("Controllers").GetComponent<PointsAndGameOver>().points++;
+            Debug.Log("Yipeee");
+            
         }
 
 
-        if (anomali)
+        if (anomaliCheck)
         {
+         
             if (temp.CompareTag("ChangedObject"))
             {
                 temp.GetComponent<ChangedObject>().ResetObject();
@@ -121,7 +142,14 @@ public class AnomalyController : MonoBehaviour
             else if (temp != null)
             {
                 temp.SetActive(!temp.activeSelf);
+                Debug.Log("retard");
             }
+            
+            
         }
+        AnomaliSelect();
     }
+    
+
+    
 } 
