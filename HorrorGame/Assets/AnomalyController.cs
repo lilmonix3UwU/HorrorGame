@@ -18,9 +18,10 @@ public class AnomalyController : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         startTimer = true;
+        IngenAnomalier();
     }
 
     // Update is called once per frame
