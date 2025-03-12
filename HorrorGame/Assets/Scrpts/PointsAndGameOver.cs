@@ -12,8 +12,7 @@ public class PointsAndGameOver : MonoBehaviour
     private float secondsLeft;
     public int minutesLeft;
     private bool doorSpamPrevention = true;
-    [SerializeField] private TMP_Text _text;
-    [SerializeField] private GameObject _door;
+    [SerializeField] private TMP_Text[] _text;
 
     private void Start()
     {
@@ -49,7 +48,12 @@ public class PointsAndGameOver : MonoBehaviour
         if (minutesLeft < 10) { minutesPlusZero = "0" + minutesLeft.ToString(); } else { minutesPlusZero = minutesLeft.ToString(); }
         
 
-        _text.text =  minutesPlusZero + colonAndZero + seconds.ToString();
+
+        for (int i = 0; i < _text.Length; i++)
+        {
+            _text[i].text = minutesPlusZero + colonAndZero + seconds.ToString();
+        }
+        
 
 
 
