@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PointsAndGameOver : MonoBehaviour
@@ -11,12 +12,17 @@ public class PointsAndGameOver : MonoBehaviour
 
     private float secondsLeft;
     public int minutesLeft;
-    private bool doorSpamPrevention = true;
+    private bool spamPrevention = true;
+    private GameObject player;
     [SerializeField] private TMP_Text[] _text;
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject gameOverUILose;
+    [SerializeField] private GameObject gameOverUIWin;
 
     private void Start()
     {
         points = 0;
+        player = GameObject.FindWithTag("Player");
     }
 
     private void Update()
@@ -31,10 +37,25 @@ public class PointsAndGameOver : MonoBehaviour
         { 
             secondsLeft -= Time.deltaTime; 
         }
-        else if (doorSpamPrevention)
+        else if (spamPrevention)
         {
-            
-            doorSpamPrevention = false;
+            player.GetComponent<PlayerInteraction>().InteractionEnabled = false;
+            player.GetComponent<PlayerInput>().enabled = false;
+            gameOverUIWin.SetActive(true);
+
+            if (points < 15)
+            {
+
+                gameOverUILose.SetActive(true);
+            }
+            else if (points >= 15)
+            {
+                gameOverUIWin.SetActive(true);
+            }
+
+
+
+            spamPrevention = false;
         }
 
 
