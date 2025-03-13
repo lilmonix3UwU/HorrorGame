@@ -22,19 +22,20 @@ public class AnomalyController : MonoBehaviour
     {
         startTimer = true;
         IngenAnomalier();
+        anomaliCheck = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             AnomaliCheck(true);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             AnomaliCheck(false);
-        }
+        } */
 
         if (startTimer)
         {
