@@ -1821,6 +1821,7 @@ MonoBehaviour:
   - {fileID: 761232315}
   - {fileID: 2007026854}
   - {fileID: 1840638348}
+  - {fileID: 324303067}
   flyvendeAnomalier:
   - {fileID: 1187402852}
   - {fileID: 365014014}
@@ -3984,7 +3985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &324303068
 Transform:
   m_ObjectHideFlags: 0
@@ -3994,7 +3995,7 @@ Transform:
   m_GameObject: {fileID: 324303067}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7313538, y: 0.6819983, z: -0, w: -0}
-  m_LocalPosition: {x: 1.83, y: 1.7340002, z: 6.3}
+  m_LocalPosition: {x: -2, y: 1.7340002, z: -0.6}
   m_LocalScale: {x: 23.492685, y: 14.902799, z: 32.41345}
   m_ConstrainProportionsScale: 0
   m_Children: []
