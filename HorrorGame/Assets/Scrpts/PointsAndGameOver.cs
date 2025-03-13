@@ -1,3 +1,4 @@
+using StarterAssets;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ public class PointsAndGameOver : MonoBehaviour
     {
         if (secondsLeft <= 0 && minutesLeft > 0)
         {
-            secondsLeft = 10;
+            secondsLeft = 60;
             minutesLeft--;
         }
 
@@ -39,9 +40,9 @@ public class PointsAndGameOver : MonoBehaviour
         }
         else if (spamPrevention)
         {
-            player.GetComponent<PlayerInteraction>().InteractionEnabled = false;
-            player.GetComponent<PlayerInput>().enabled = false;
-            gameOverUIWin.SetActive(true);
+            player.GetComponent<PlayerInteraction>().enabled = false;
+            player.GetComponent<FirstPersonController>().enabled = false;
+            gameOverUI.SetActive(true);
 
             if (points < 15)
             {

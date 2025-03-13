@@ -128,7 +128,7 @@ public class AnomalyController : MonoBehaviour
         startTimer = true;
         if (anomali == anomaliCheck)
         {
-            //GameObject.Find("Controllers").GetComponent<PointsAndGameOver>().points++;
+            GameObject.Find("Controllers").GetComponent<PointsAndGameOver>().points++;
             Debug.Log("Yipeee");
             
         }
