@@ -1147,6 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91724718}
   - component: {fileID: 91724719}
+  - component: {fileID: 91724720}
   m_Layer: 0
   m_Name: Bord horror anomali 2 shape
   m_TagString: ChangedObject
@@ -1192,6 +1193,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.2873607, y: 2.5385852, z: 2.7683268}
   m_Center: {x: 0.012547969, y: 0.76929307, z: -0.03863692}
+--- !u!114 &91724720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91724717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aceedf9ec52eee42b7b04f25792f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unchangedObject: {fileID: 8057331079271535434}
 --- !u!1 &110897953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,6 +3520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 295410091}
   - component: {fileID: 295410092}
+  - component: {fileID: 295410093}
   m_Layer: 0
   m_Name: Bord horror anomali 1 shape
   m_TagString: ChangedObject
@@ -3551,6 +3566,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.2873607, y: 2.5385852, z: 2.7683268}
   m_Center: {x: 0.012547969, y: 0.76929307, z: -0.03863692}
+--- !u!114 &295410093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295410090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aceedf9ec52eee42b7b04f25792f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unchangedObject: {fileID: 8057331078182504419}
 --- !u!1 &302470202
 GameObject:
   m_ObjectHideFlags: 0
@@ -9622,6 +9650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806240178}
   - component: {fileID: 806240179}
+  - component: {fileID: 806240180}
   m_Layer: 0
   m_Name: Bord horror anomali 4 shape
   m_TagString: ChangedObject
@@ -9667,6 +9696,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.2873607, y: 2.5385852, z: 2.7683268}
   m_Center: {x: 0.012547969, y: 0.76929307, z: -0.03863692}
+--- !u!114 &806240180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806240177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aceedf9ec52eee42b7b04f25792f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unchangedObject: {fileID: 1542914212}
 --- !u!1 &813690893
 GameObject:
   m_ObjectHideFlags: 0
@@ -23981,6 +24023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117146422}
   - component: {fileID: 2117146423}
+  - component: {fileID: 2117146424}
   m_Layer: 0
   m_Name: Bord horror anomali 3 shape
   m_TagString: ChangedObject
@@ -24026,6 +24069,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.2873607, y: 2.5385852, z: 2.7683268}
   m_Center: {x: 0.012547969, y: 0.76929307, z: -0.03863692}
+--- !u!114 &2117146424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117146421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aceedf9ec52eee42b7b04f25792f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unchangedObject: {fileID: 1813993234}
 --- !u!1 &2119578179
 GameObject:
   m_ObjectHideFlags: 0
